@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Accounts</title>
+</head>
+<body>    
+    <a href="{% url 'home-calculator' %}">calculator</a>
+    <a href="{% url 'home-core' %}">core</a>
+    <a href="{% url 'home-accounts' %}">accounts</a>
+    <a href="{% url 'home-infobank' %}">infobank</a>
+    <a href="{% url 'home' %}">home</a>
+    <br>
+    {{home_message}}
+</body>
+</html>
