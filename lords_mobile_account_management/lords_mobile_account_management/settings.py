@@ -49,7 +49,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'lords_mobile_account_management.urls'
-
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
