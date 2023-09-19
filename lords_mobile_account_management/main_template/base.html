@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Common head content -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    
+</head>
+<body>
+    {% include "main_nav.html" %}
+    <!-- Common navigation/header content -->
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <!-- Common footer content -->
+</body>
+</html>

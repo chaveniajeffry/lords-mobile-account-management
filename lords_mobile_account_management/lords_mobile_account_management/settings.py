@@ -55,6 +55,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            os.path.join(BASE_DIR, 'main_template'),
             os.path.join(BASE_DIR, 'base/templates'),
             os.path.join(BASE_DIR, 'lm_accounts/templates'),
             os.path.join(BASE_DIR, 'lm_calculator/templates'),
