@@ -74,6 +74,10 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [ 
+    os.path.join(BASE_DIR, "static"),
+]
+
 WSGI_APPLICATION = 'lords_mobile_account_management.wsgi.application'
 
 
