@@ -8,3 +8,10 @@ class LMAccount(models.Model):
 
     class Meta:
         db_table = "lm_account"
+
+class Bag(models.Model):
+    id = models.AutoField(primary_key=True)
+    
+
+    class Meta:
+        db_table = "lm_account_bag"
