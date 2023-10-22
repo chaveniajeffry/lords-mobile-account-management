@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-{{home_message}}
-{{lm_accounts}}
+{% for account in lm_accounts %}
+<table>
+    <tr>
+        <td>IGN</td>
+        <td>Email</td>
+        <td>Reset Time</td>
+        <td>rovider</td>
+    </tr>
+    {% for account in lm_accounts %}
+    <tr>
+        <td>{{account.IGN}}</td>
+        <td>{{account.email}}</td>
+        <td>{{account.reset_time}}</td>
+        <td>{{account.provider}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endfor %}
 {% endblock %}
