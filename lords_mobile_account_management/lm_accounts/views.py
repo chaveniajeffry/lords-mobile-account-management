@@ -4,8 +4,10 @@ from base.models import LMAccount
 
 @login_required
 def home(request):
+    lm_accounts = LMAccount.objects.all()
     context = {
         "home_message":"accounts page",
+        "lm_accounts":lm_accounts,
     }
     return render(request,'lm_accounts/home.html',context)
 
