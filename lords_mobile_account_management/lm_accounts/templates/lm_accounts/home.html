@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for account in lm_accounts %}
 <table>
     <tr>
         <td>IGN</td>
@@ -17,5 +16,13 @@
     </tr>
     {% endfor %}
 </table>
-{% endfor %}
+<div id="addAccountContainer">
+    <form action="{% url 'create-lm-account' %}" method="post">
+        {% csrf_token %}
+        
+        {{lm_account_form.as_p}}
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>
 {% endblock %}
