@@ -5,6 +5,9 @@ from lm_accounts import views
 urlpatterns = [
     path("", views.home, name="home-accounts"),
     path("create-lm-account/", views.createAccount, name="create-lm-account"),
+    path("update-lm-account/:<str:pk>/", views.updateAccount, name="update-lm-account"),
+    path("delete-lm-account/:<str:pk>/", views.deleteAcoount, name="delete-lm-account"),
+    
     # path("admin/", admin.site.urls),
     
 ]

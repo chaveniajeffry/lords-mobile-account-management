@@ -5,7 +5,8 @@
         <td>IGN</td>
         <td>Email</td>
         <td>Reset Time</td>
-        <td>rovider</td>
+        <td>Provider</td>
+        <td colspan=2>Action</td>
     </tr>
     {% for account in lm_accounts %}
     <tr>
@@ -13,6 +14,8 @@
         <td>{{account.email}}</td>
         <td>{{account.reset_time}}</td>
         <td>{{account.provider}}</td>
+        <td><a href="{% url "update-lm-account" account.id %}">edit</a></td>
+        <td><a href="{% url "delete-lm-account" account.id %}">delete</a></td>
     </tr>
     {% endfor %}
 </table>

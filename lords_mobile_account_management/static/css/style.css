@@ -10,3 +10,9 @@ body{
     justify-content: center;
     align-items: center;
 }
+table {
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid;
+}

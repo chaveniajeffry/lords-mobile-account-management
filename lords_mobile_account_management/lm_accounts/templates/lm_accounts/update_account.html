@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ lm_account_form.id }}
+    {{ lm_account_form.IGN.label }}
+    {{ lm_account_form.IGN }}
+    {{ lm_account_form.reset_time.label }}
+    {{ lm_account_form.reset_time }}
+    {{ lm_account_form.email.label }}
+    {{ lm_account_form.email }}
+    {{ lm_account_form.provider.label }}
+    {{ lm_account_form.provider }}
+    <input type="submit" value="Save">
+</form>
+{% endblock %}
