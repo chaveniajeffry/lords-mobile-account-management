@@ -56,13 +56,3 @@ def deleteAcoount(request,pk):
     lm_account = LMUserAccount.objects.get(id=pk)
     lm_account.delete()
     return redirect("home-accounts")
-# def deleteTodo(request, pk):
-#     task = Todo.objects.get(id=pk)
-#     task.delete()
-#     todos = Todo.objects.all()
-#     form = TodoForm()
-#     context = {
-#         'todos': todos,
-#         'form': form,
-#     }
-#     return redirect("home")
