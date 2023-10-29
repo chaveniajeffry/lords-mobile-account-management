@@ -79,14 +79,6 @@ class LMUserResearchEconomy(models.Model):
     class Meta:
         db_table = "lm_user_research_economy"
 
-class LMUserResearchEconomy(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    level = models.IntegerField()
-
-    class Meta:
-        db_table = "lm_user_research_economy"
-
 class LMUserResearchDefense(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
@@ -102,14 +94,6 @@ class LMUserResearchMilitary(models.Model):
 
     class Meta:
         db_table = "lm_user_research_military"
-
-class LMUserResearchMonsterHunt(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    level = models.IntegerField()
-
-    class Meta:
-        db_table = "lm_user_research_monster_hunt"
 
 class LMUserResearchMonsterHunt(models.Model):
     id = models.AutoField(primary_key=True)

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<table>
+    <tr>
+        <td>IGN</td>
+        <td>Email</td>
+        <td>Reset Time</td>
+        <td>Provider</td>
+    </tr>
+    <tr>
+        <td>{{lm_account.IGN}}</td>
+        <td>{{lm_account.email}}</td>
+        <td>{{lm_account.reset_time}}</td>
+        <td>{{lm_account.provider}}</td>
+    </tr>
+</table>
+{% endblock %}

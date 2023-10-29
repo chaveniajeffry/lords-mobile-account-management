@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from base.models import LMAccount
-from lm_accounts.models import LMUserAccount
+from lm_accounts.models import LMUserAccount,LMUserBag,LMUserBagChest,LMUserBagCombat,LMUserBagResources,LMUserBagSpeedUp,LMUserBagUnique
 from lm_accounts.forms import LMUserAccountForm
 
 @login_required
@@ -30,6 +30,14 @@ def createAccount(request):
         )
         
         return redirect("home-accounts")
+    
+def readAccount(request,pk):
+    lm_account = get_object_or_404(LMUserAccount, id=pk)
+    context = {
+        "lm_account":lm_account,
+    }
+    return render(request,'lm_accounts/lm_account_details.html',context)
+    
 
 def updateAccount(request,pk):
     lm_account = get_object_or_404(LMUserAccount, id=pk)

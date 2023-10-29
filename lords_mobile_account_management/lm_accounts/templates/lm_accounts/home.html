@@ -10,7 +10,7 @@
     </tr>
     {% for account in lm_accounts %}
     <tr>
-        <td>{{account.IGN}}</td>
+        <td><a href="{% url "read-lm-account" account.id %}">{{account.IGN}}</a></td>
         <td>{{account.email}}</td>
         <td>{{account.reset_time}}</td>
         <td>{{account.provider}}</td>
