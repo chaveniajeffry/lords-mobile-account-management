@@ -1,0 +1,15 @@
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Count</td>
+        <td colspan=2>Action</td>
+    </tr>
+    {% for bag_chest in lm_user_bag_chest %}
+        <tr>
+            <td>{{bag_chest.name}}</td>
+            <td>{{bag_chest.count}}</td>
+            <td>edit</td>
+            <td>delete</td>
+        </tr>
+    {% endfor %}
+</table>

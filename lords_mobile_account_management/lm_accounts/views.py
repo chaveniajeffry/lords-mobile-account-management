@@ -33,8 +33,11 @@ def createAccount(request):
     
 def readAccount(request,pk):
     lm_account = get_object_or_404(LMUserAccount, id=pk)
+    lm_user_bag = LMUserBag.objects.get(account_id=lm_account)
+    lm_user_bag_chest = LMUserBagChest.objects.filter(bag_id=lm_user_bag)
     context = {
         "lm_account":lm_account,
+        "lm_user_bag_chest":lm_user_bag_chest,
     }
     return render(request,'lm_accounts/lm_account_details.html',context)
     
