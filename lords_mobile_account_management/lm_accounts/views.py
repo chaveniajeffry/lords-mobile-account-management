@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from base.models import LMAccount
 from lm_accounts.models import LMUserAccount,LMUserBag,LMUserBagChest,LMUserBagCombat,LMUserBagResources,LMUserBagSpeedUp,LMUserBagUnique
-from lm_accounts.forms import LMUserAccountForm
+from lm_accounts.forms import LMUserAccountForm,LMUserBagChestForm
 
 @login_required
 def home(request):
@@ -30,14 +30,32 @@ def createAccount(request):
         )
         
         return redirect("home-accounts")
+
+def createBagChest(request):
+    if request.method == "POST":
+        print(request.POST)
+        name = request.POST.get("name")
+        count = request.POST.get("count")
+        bag_id = request.POST.get("bag_id")
+        account_id = request.POST.get("pk")
+        lm_bag = LMUserBag.objects.get(id=bag_id)
+        LMUserBagChest.objects.create(
+            name=name,
+            count=count,
+            bag_id=lm_bag,
+        )
+        print("nya")
+        return redirect("read-lm-account", pk=account_id)
     
 def readAccount(request,pk):
     lm_account = get_object_or_404(LMUserAccount, id=pk)
     lm_user_bag = LMUserBag.objects.get(account_id=lm_account)
     lm_user_bag_chest = LMUserBagChest.objects.filter(bag_id=lm_user_bag)
+    lm_user_bag_chest_form = LMUserBagChestForm()
     context = {
         "lm_account":lm_account,
         "lm_user_bag_chest":lm_user_bag_chest,
+        "lm_user_bag_chest_form":lm_user_bag_chest_form,
     }
     return render(request,'lm_accounts/lm_account_details.html',context)
     

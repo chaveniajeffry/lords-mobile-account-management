@@ -8,6 +8,8 @@ urlpatterns = [
     path("read-lm-account/:<str:pk>/", views.readAccount, name="read-lm-account"),
     path("update-lm-account/:<str:pk>/", views.updateAccount, name="update-lm-account"),
     path("delete-lm-account/:<str:pk>/", views.deleteAcoount, name="delete-lm-account"),
+    path("create-bag-chest/", views.createBagChest, name="create-bag-chest"),
+    # 
     
     # path("admin/", admin.site.urls),
     

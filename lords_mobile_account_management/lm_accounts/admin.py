@@ -1,7 +1,8 @@
 from django.contrib import admin
-from .models import LMUserAccount,LMUserBag,LMUserBagChest,LMUserBagCombat,LMUserBagResources,LMUserBagSpeedUp,LMUserBagUnique
+from lm_accounts.models import LMUserAccount,LMUserBag,LMUserBagChest,LMUserBagCombat,LMUserBagResources,LMUserBagSpeedUp,LMUserBagUnique
 # Register your models here.
 admin.site.register(LMUserAccount)
+admin.site.register(LMUserBag)
 admin.site.register(LMUserBagChest)
 admin.site.register(LMUserBagCombat)
 admin.site.register(LMUserBagResources)
