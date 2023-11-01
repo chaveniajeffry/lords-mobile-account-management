@@ -19,45 +19,9 @@ class LMUserAccount(models.Model):
     class Meta:
         db_table = "LMUserAccount"
 
-class LMUserBagUnique(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    count = models.IntegerField()
-
-    class Meta:
-        db_table = "lm_user_bag_unique"
-
-class LMUserBagResources(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    count = models.IntegerField()
-
-    class Meta:
-        db_table = "lm_user_bag_resources"
-
-class LMUserBagSpeedUp(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    count = models.IntegerField()
-
-    class Meta:
-        db_table = "lm_user_bag_speedup"
-
-class LMUserBagCombat(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    count = models.IntegerField()
-
-    class Meta:
-        db_table = "lm_user_bag_combat"
-
 class LMUserBag(models.Model):
     id = models.AutoField(primary_key=True)
     account_id = models.ForeignKey(LMUserAccount, on_delete=models.CASCADE, null=True)
-    unique_id = models.ForeignKey(LMUserBagUnique, on_delete=models.CASCADE, null=True)
-    resources_id = models.ForeignKey(LMUserBagResources, on_delete=models.CASCADE, null=True)
-    speedup_id = models.ForeignKey(LMUserBagSpeedUp, on_delete=models.CASCADE, null=True)
-    combat_id = models.ForeignKey(LMUserBagCombat, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_bag"
@@ -70,6 +34,42 @@ class LMUserBagChest(models.Model):
 
     class Meta:
         db_table = "lm_user_bag_chest"
+
+class LMUserBagUnique(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    count = models.IntegerField()
+    bag_id = models.ForeignKey(LMUserBag, on_delete=models.CASCADE, null=True)
+
+    class Meta:
+        db_table = "lm_user_bag_unique"
+
+class LMUserBagSpeedUp(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    count = models.IntegerField()
+    bag_id = models.ForeignKey(LMUserBag, on_delete=models.CASCADE, null=True)
+
+    class Meta:
+        db_table = "lm_user_bag_speedup"
+
+class LMUserBagCombat(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    count = models.IntegerField()
+    bag_id = models.ForeignKey(LMUserBag, on_delete=models.CASCADE, null=True)
+
+    class Meta:
+        db_table = "lm_user_bag_combat"
+
+class LMUserBagResources(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    count = models.IntegerField()
+    bag_id = models.ForeignKey(LMUserBag, on_delete=models.CASCADE, null=True)
+
+    class Meta:
+        db_table = "lm_user_bag_resources"
 
 class LMUserResearchEconomy(models.Model):
     id = models.AutoField(primary_key=True)

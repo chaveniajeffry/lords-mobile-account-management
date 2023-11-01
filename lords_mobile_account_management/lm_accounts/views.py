@@ -22,13 +22,15 @@ def createAccount(request):
         reset_time = request.POST.get("reset_time")
         email = request.POST.get("email")
         provider = request.POST.get("provider")
-        LMUserAccount.objects.create(
+        lm_user = LMUserAccount.objects.create(
             IGN=ign,
             reset_time=reset_time,
             email=email,
             provider=provider,
         )
-        
+        LMUserBag.objects.create(
+            account_id = lm_user
+        )
         return redirect("home-accounts")
 
 def createBagChest(request):
@@ -36,16 +38,47 @@ def createBagChest(request):
         print(request.POST)
         name = request.POST.get("name")
         count = request.POST.get("count")
-        bag_id = request.POST.get("bag_id")
         account_id = request.POST.get("pk")
-        lm_bag = LMUserBag.objects.get(id=bag_id)
+        lm_account = get_object_or_404(LMUserAccount, id=account_id)
+        lm_bag = LMUserBag.objects.get(account_id=lm_account)
         LMUserBagChest.objects.create(
             name=name,
             count=count,
             bag_id=lm_bag,
         )
-        print("nya")
         return redirect("read-lm-account", pk=account_id)
+
+def updateBagChest(request,pk):
+    lm_user_bag_chest = get_object_or_404(LMUserBagChest, id=pk)
+    lm_user_bag = get_object_or_404(LMUserBag, id=lm_user_bag_chest.bag_id.id)
+    lm_account = get_object_or_404(LMUserAccount, id=lm_user_bag.account_id.id)
+    lm_user_bag_chest_form = LMUserBagChestForm(instance=lm_user_bag_chest)
+    if request.method == "POST":
+        name = request.POST.get("name")
+        count = request.POST.get("count")
+        lm_user_bag_chest.name = name
+        lm_user_bag_chest.count = count
+        lm_user_bag_chest.save()
+        return redirect("read-lm-account", pk=lm_account.id)
+    context = {
+        "lm_account":lm_account,
+        "lm_user_bag_chest_form":lm_user_bag_chest_form,
+    }
+    return render(request,'lm_accounts/lm_bag/lm_bag_chest_update.html',context)
+
+def deleteBagChest(request,pk):
+    lm_user_bag_chest = get_object_or_404(LMUserBagChest, id=pk)
+    lm_user_bag = get_object_or_404(LMUserBag, id=lm_user_bag_chest.bag_id.id)
+    lm_account = get_object_or_404(LMUserAccount, id=lm_user_bag.account_id.id)
+    lm_user_bag_chest_form = LMUserBagChestForm()
+    lm_user_bag_chest.delete()
+    lm_user_bag_chest = LMUserBagChest.objects.filter(bag_id=lm_user_bag)
+    context = {
+        "lm_account":lm_account,
+        "lm_user_bag_chest":lm_user_bag_chest,
+        "lm_user_bag_chest_form":lm_user_bag_chest_form,
+    }
+    return render(request,'lm_accounts/lm_account_details.html',context)
     
 def readAccount(request,pk):
     lm_account = get_object_or_404(LMUserAccount, id=pk)
