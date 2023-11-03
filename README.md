@@ -1,15 +1,15 @@
 # lords-mobile-account-management
 
 This are the apps that I'll be using:\
-<ol>
+<ol type="1">
 <li>lm core - this is where all the core model/info will be</li>
-  <ol>
+  <ol type="1">
     <li>research</li>
     <li>bag</li>
     <li>equipments</li>
   </ol>
 <li>lm accounts - this is all the accounts will be</li>
-  <ol>
+  <ol type="1">
     <li>user research</li>
     <li>user bag</li>
     <li>user stats</li>
