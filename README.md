@@ -19,5 +19,5 @@ This are the apps that I'll be using:\
 <li>lm calculator - this will be all the calcutation needed in everything</li>
 <li>lm info bank - this is where all the excess info will be</li>
 </ol>
-\
+<br>
 This will be my last project in 2023
