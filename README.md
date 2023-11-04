@@ -17,6 +17,17 @@ This are the apps that I'll be using:\
     <li>user equipment</li>
   </ol>
 <li>lm calculator - this will be all the calcutation needed in everything</li>
+  <ol type="1">
+    <li>research calculator</li>
+    <li>gem calculator</li>
+    <li>rss calculator</li>
+    <li>t4 calculator</li>
+    <li>t5 calculator</li>
+    <li>might calculator</li>
+    <li>troops calculator</li>
+    <li>building calculator</li>
+    <li>speed ups calculator</li>
+  </ol>
 <li>lm info bank - this is where all the excess info will be</li>
 </ol>
 <br>
