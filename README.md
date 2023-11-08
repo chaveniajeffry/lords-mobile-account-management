@@ -29,6 +29,10 @@ This are the apps that I'll be using:\
     <li>speed ups calculator</li>
   </ol>
 <li>lm info bank - this is where all the excess info will be</li>
+  <ol type="1">
+    <li>Events guild</li>
+    <li>monster hunt guide</li>
+  </ol>
 </ol>
 <br>
 This will be my last project in 2023
