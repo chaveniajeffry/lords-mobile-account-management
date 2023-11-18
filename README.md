@@ -35,4 +35,4 @@ This are the apps that I'll be using:\
   </ol>
 </ol>
 <br>
-This will be my last project in 2023
+This will be my last project in 2023. This will have a simple documentation on how to install in from start to finish. I use virtual environment (venv) to isolate the needed packages that will be included in this project.
