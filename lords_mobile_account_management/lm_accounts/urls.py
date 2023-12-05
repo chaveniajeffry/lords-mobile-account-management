@@ -11,4 +11,7 @@ urlpatterns = [
     path("create-bag-chest/", views.createBagChest, name="create-bag-chest"),
     path("update-bag-chest/:<str:pk>/", views.updateBagChest, name="update-bag-chest"),
     path("delete-bag-chest/:<str:pk>/", views.deleteBagChest, name="delete-bag-chest"),
+    path("create-bag-unique/", views.createBagUnique, name="create-bag-unique"),
+    path("update-bag-unique/:<str:pk>/", views.updateBagUnique, name="update-bag-unique"),
+    path("delete-bag-unique/:<str:pk>/", views.deleteBagUnique, name="delete-bag-unique"),
 ]
