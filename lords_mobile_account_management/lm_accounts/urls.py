@@ -17,4 +17,7 @@ urlpatterns = [
     path("create-bag-speed-up/", views.createBagSpeedUp, name="create-bag-speed-up"),
     path("update-bag-speed-up/:<str:pk>/", views.updateBagSpeedUp, name="update-bag-speed-up"),
     path("delete-bag-speed-up/:<str:pk>/", views.deleteBagSpeedUp, name="delete-bag-speed-up"),
+    path("create-bag-combat/", views.createBagCombat, name="create-bag-combat"),
+    path("update-bag-combat/:<str:pk>/", views.updateBagCombat, name="update-bag-combat"),
+    path("delete-bag-combat/:<str:pk>/", views.deleteBagCombat, name="delete-bag-combat"),
 ]
