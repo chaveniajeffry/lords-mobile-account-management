@@ -14,4 +14,7 @@ urlpatterns = [
     path("create-bag-unique/", views.createBagUnique, name="create-bag-unique"),
     path("update-bag-unique/:<str:pk>/", views.updateBagUnique, name="update-bag-unique"),
     path("delete-bag-unique/:<str:pk>/", views.deleteBagUnique, name="delete-bag-unique"),
+    path("create-bag-speed-up/", views.createBagSpeedUp, name="create-bag-speed-up"),
+    path("update-bag-speed-up/:<str:pk>/", views.updateBagSpeedUp, name="update-bag-speed-up"),
+    path("delete-bag-speed-up/:<str:pk>/", views.deleteBagSpeedUp, name="delete-bag-speed-up"),
 ]

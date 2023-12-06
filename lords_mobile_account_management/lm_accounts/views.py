@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from base.models import LMAccount
 from lm_accounts.models import LMUserAccount,LMUserBag,LMUserBagChest,LMUserBagCombat,LMUserBagResources,LMUserBagSpeedUp,LMUserBagUnique
-from lm_accounts.forms import LMUserAccountForm,LMUserBagChestForm, LMUserBagUniqueForm
+from lm_accounts.forms import LMUserAccountForm,LMUserBagChestForm, LMUserBagUniqueForm, LMUserBagSpeedUpForm
 
 @login_required
 def home(request):
@@ -38,14 +38,18 @@ def readAccount(request,pk):
     lm_user_bag = LMUserBag.objects.get(account_id=lm_account)
     lm_user_bag_chest = LMUserBagChest.objects.filter(bag_id=lm_user_bag)
     lm_user_bag_unique = LMUserBagUnique.objects.filter(bag_id=lm_user_bag)
+    lm_user_bag_speed_up = LMUserBagSpeedUp.objects.filter(bag_id=lm_user_bag)
     lm_user_bag_chest_form = LMUserBagChestForm()
     lm_user_bag_unique_form = LMUserBagUniqueForm()
+    lm_user_bag_speed_up_form = LMUserBagSpeedUpForm()
     context = {
         "lm_account":lm_account,
         "lm_user_bag_chest":lm_user_bag_chest,
         "lm_user_bag_chest_form":lm_user_bag_chest_form,
         "lm_user_bag_unique":lm_user_bag_unique,
         "lm_user_bag_unique_form":lm_user_bag_unique_form,
+        "lm_user_bag_speed_up":lm_user_bag_speed_up,
+        "lm_user_bag_speed_up_form":lm_user_bag_speed_up_form,
     }
     return render(request,'lm_accounts/lm_account_details.html',context)
     
@@ -152,4 +156,44 @@ def deleteBagUnique(request,pk):
     lm_user_bag = get_object_or_404(LMUserBag, id=lm_user_bag_unique.bag_id.id)
     lm_account = get_object_or_404(LMUserAccount, id=lm_user_bag.account_id.id)
     lm_user_bag_unique.delete()
+    return redirect("read-lm-account", pk=lm_account.id)
+
+# LMUserBagSpeedUp
+def createBagSpeedUp(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        count = request.POST.get("count")
+        account_id = request.POST.get("pk")
+        lm_account = get_object_or_404(LMUserAccount, id=account_id)
+        lm_bag = LMUserBag.objects.get(account_id=lm_account)
+        LMUserBagSpeedUp.objects.create(
+            name=name,
+            count=count,
+            bag_id=lm_bag,
+        )
+        return redirect("read-lm-account", pk=account_id)
+
+def updateBagSpeedUp(request,pk):
+    lm_user_bag_speed_up = get_object_or_404(LMUserBagSpeedUp, id=pk)
+    lm_user_bag = get_object_or_404(LMUserBag, id=lm_user_bag_speed_up.bag_id.id)
+    lm_account = get_object_or_404(LMUserAccount, id=lm_user_bag.account_id.id)
+    lm_user_bag_speed_up_form = LMUserBagSpeedUpForm(instance=lm_user_bag_speed_up)
+    if request.method == "POST":
+        name = request.POST.get("name")
+        count = request.POST.get("count")
+        lm_user_bag_speed_up.name = name
+        lm_user_bag_speed_up.count = count
+        lm_user_bag_speed_up.save()
+        return redirect("read-lm-account", pk=lm_account.id)
+    context = {
+        "lm_account":lm_account,
+        "lm_user_bag_speed_up_form":lm_user_bag_speed_up_form,
+    }
+    return render(request,'lm_accounts/lm_bag/lm_bag_speed_up_update.html',context)
+
+def deleteBagSpeedUp(request,pk):
+    lm_user_bag_speed_up = get_object_or_404(LMUserBagSpeedUp, id=pk)
+    lm_user_bag = get_object_or_404(LMUserBag, id=lm_user_bag_speed_up.bag_id.id)
+    lm_account = get_object_or_404(LMUserAccount, id=lm_user_bag.account_id.id)
+    lm_user_bag_speed_up.delete()
     return redirect("read-lm-account", pk=lm_account.id)
