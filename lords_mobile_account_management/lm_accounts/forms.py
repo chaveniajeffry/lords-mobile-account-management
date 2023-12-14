@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from lm_accounts.models import LMUserAccount, LMUserBagChest, LMUserBagUnique, LMUserBagSpeedUp,LMUserBagCombat
+from lm_accounts.models import LMUserAccount, LMUserBagChest, LMUserBagUnique, LMUserBagSpeedUp,LMUserBagCombat, LMUserBagResources
 
 class LMUserAccountForm(ModelForm):
     
@@ -40,6 +40,15 @@ class LMUserBagCombatForm(ModelForm):
     
     class Meta:
         model = LMUserBagCombat
+        fields = [
+            'name', 'count', 'bag_id'
+        ]
+
+        
+class LMUserBagResourcesForm(ModelForm):
+    
+    class Meta:
+        model = LMUserBagResources
         fields = [
             'name', 'count', 'bag_id'
         ]

@@ -20,4 +20,7 @@ urlpatterns = [
     path("create-bag-combat/", views.createBagCombat, name="create-bag-combat"),
     path("update-bag-combat/:<str:pk>/", views.updateBagCombat, name="update-bag-combat"),
     path("delete-bag-combat/:<str:pk>/", views.deleteBagCombat, name="delete-bag-combat"),
+    path("create-bag-resources/", views.createBagResources, name="create-bag-resources"),
+    path("update-bag-resources/:<str:pk>/", views.updateBagResources, name="update-bag-resources"),
+    path("delete-bag-resources/:<str:pk>/", views.deleteBagResources, name="delete-bag-resources"),
 ]
