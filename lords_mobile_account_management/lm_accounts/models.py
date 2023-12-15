@@ -71,10 +71,18 @@ class LMUserBagResources(models.Model):
     class Meta:
         db_table = "lm_user_bag_resources"
 
+class LMUserResearch(models.Model):
+    id = models.AutoField(primary_key=True)
+    account_id = models.ForeignKey(LMUserAccount, on_delete=models.CASCADE, null=True)
+
+    class Meta:
+        db_table = "lm_user_research"
+
 class LMUserResearchEconomy(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_economy"
@@ -83,6 +91,7 @@ class LMUserResearchDefense(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_defense"
@@ -91,6 +100,7 @@ class LMUserResearchMilitary(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_military"
@@ -99,6 +109,7 @@ class LMUserResearchMonsterHunt(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_monster_hunt"
@@ -107,6 +118,7 @@ class LMUserResearchUpgradeDefenses(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_upgrade_defenses"
@@ -115,6 +127,7 @@ class LMUserResearchUpgradeMilitary(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_upgrade_military"
@@ -123,6 +136,7 @@ class LMUserResearchArmyLeadership(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_army_leadership"
@@ -131,6 +145,7 @@ class LMUserResearchMilitaryCommand(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_military_command"
@@ -139,6 +154,7 @@ class LMUserResearchFamiliar(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_familiar"
@@ -147,6 +163,7 @@ class LMUserResearchFamiliarBattles(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_familiar_battles"
@@ -155,6 +172,7 @@ class LMUserResearchSigil(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_sigil"
@@ -163,6 +181,7 @@ class LMUserResearchWonderBattles(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_wonder_battles"
@@ -171,6 +190,7 @@ class LMUserResearchGear(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_gear"
@@ -179,28 +199,8 @@ class LMUserResearchAdvancedWonderBattles(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     level = models.IntegerField()
+    research = models.ForeignKey(LMUserResearch, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research_advanced_wonder_battles"
-
-class LMUserResearch(models.Model):
-    id = models.AutoField(primary_key=True)
-    account_id = models.ForeignKey(LMUserAccount, on_delete=models.CASCADE, null=True)
-    economy_id = models.ForeignKey(LMUserResearchEconomy, on_delete=models.CASCADE, null=True)
-    defense_id = models.ForeignKey(LMUserResearchDefense, on_delete=models.CASCADE, null=True)
-    military_id = models.ForeignKey(LMUserResearchMilitary, on_delete=models.CASCADE, null=True)
-    monster_hunt_id = models.ForeignKey(LMUserResearchMonsterHunt, on_delete=models.CASCADE, null=True)
-    upgrade_defenses_id = models.ForeignKey(LMUserResearchUpgradeDefenses, on_delete=models.CASCADE, null=True)
-    upgrade_military_id = models.ForeignKey(LMUserResearchUpgradeMilitary, on_delete=models.CASCADE, null=True)
-    army_leadership_id = models.ForeignKey(LMUserResearchArmyLeadership, on_delete=models.CASCADE, null=True)
-    military_command_id = models.ForeignKey(LMUserResearchMilitaryCommand, on_delete=models.CASCADE, null=True)
-    familiar_id = models.ForeignKey(LMUserResearchFamiliar, on_delete=models.CASCADE, null=True)
-    battle_familiar_id = models.ForeignKey(LMUserResearchFamiliarBattles, on_delete=models.CASCADE, null=True)
-    sigil_id = models.ForeignKey(LMUserResearchSigil, on_delete=models.CASCADE, null=True)
-    wonder_battles_id = models.ForeignKey(LMUserResearchWonderBattles, on_delete=models.CASCADE, null=True)
-    gear_id = models.ForeignKey(LMUserResearchGear, on_delete=models.CASCADE, null=True)
-    advanced_wonder_battles_id = models.ForeignKey(LMUserResearchAdvancedWonderBattles, on_delete=models.CASCADE, null=True)
-
-    class Meta:
-        db_table = "lm_user_research"
 
