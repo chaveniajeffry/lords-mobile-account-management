@@ -73,7 +73,7 @@ class LMUserBagResources(models.Model):
 
 class LMUserResearch(models.Model):
     id = models.AutoField(primary_key=True)
-    account_id = models.ForeignKey(LMUserAccount, on_delete=models.CASCADE, null=True)
+    account = models.ForeignKey(LMUserAccount, on_delete=models.CASCADE, null=True)
 
     class Meta:
         db_table = "lm_user_research"

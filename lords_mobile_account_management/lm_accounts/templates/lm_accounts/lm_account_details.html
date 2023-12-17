@@ -2,23 +2,35 @@
 {% block content %}
 <div>
     <div>
-        <h1>BAG</h1>
-        <h2>unique</h2>
-        {% include "lm_accounts/lm_bag/lm_bag_unique.html" %}
-        <h2>resources</h2>
-        {% include "lm_accounts/lm_bag/lm_bag_resources.html" %}
-        <h2>speed up</h2>
-        {% include "lm_accounts/lm_bag/lm_bag_speed_up.html" %}
-        <h2>combat</h2>
-        {% include "lm_accounts/lm_bag/lm_bag_combat.html" %}
-        <h2>chest</h2>
-        {% include "lm_accounts/lm_bag/lm_bag_chest.html" %}
+        <h1>RESEARCH</h1>
+        {% include "lm_accounts/lm_research/lm_research_economy.html" %}
     </div>
 </div>
 <div>
     <div>
-        <h1>RESEARCH</h1>
-        {% include "lm_accounts/lm_research/lm_research_economy.html" %}
+        <h1>BAG</h1>
+        <div class="bag-content">
+            <div>
+                <h2>unique</h2>
+                {% include "lm_accounts/lm_bag/lm_bag_unique.html" %}
+            </div>
+            <div>
+                <h2>resources</h2>
+                {% include "lm_accounts/lm_bag/lm_bag_resources.html" %}
+            </div>
+            <div>
+                <h2>speed up</h2>
+                {% include "lm_accounts/lm_bag/lm_bag_speed_up.html" %}
+            </div>
+            <div>
+                <h2>combat</h2>
+                {% include "lm_accounts/lm_bag/lm_bag_combat.html" %}
+            </div>
+            <div>
+                <h2>chest</h2>
+                {% include "lm_accounts/lm_bag/lm_bag_chest.html" %}
+            </div>
+        </div>
     </div>
 </div>
 <table>
