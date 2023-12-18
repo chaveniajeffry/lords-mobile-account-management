@@ -1,14 +1,24 @@
 <table>
     <tr>
-        <td>IGN</td>
-        <td>Email</td>
-        <td>Reset Time</td>
-        <td>Provider</td>
+        <td>Name</td>
+        <td>Level</td>
+        <td colspan=2>Action</td>
     </tr>
+    {% for research_economy in lm_user_research_economy %}
+        <tr>
+            <td>{{research_economy.name}}</td>
+            <td>{{research_economy.level}}</td>
+            <td><a href="{% url "update-research-economy" research_economy.id %}">edit</a></td>
+            <td><a href="{% url "delete-research-economy" research_economy.id %}">delete</a></td>
+        </tr>
+    {% endfor %}
     <tr>
-        <td>{{lm_account.IGN}}</td>
-        <td>{{lm_account.email}}</td>
-        <td>{{lm_account.reset_time}}</td>
-        <td>{{lm_account.provider}}</td>
+        <form action="{% url 'create-research-economy' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="pk" value="{{lm_account.id}}">
+            <td>{{ lm_user_research_economy_form.name }}</td>
+            <td>{{ lm_user_research_economy_form.level }}</td>
+            <td colspan=2><input type="submit" value="Save"></td>
+        </form>
     </tr>
 </table>

@@ -1,7 +1,7 @@
 from django.urls import path
 
 from lm_accounts import views
-from lm_accounts import lm_bag
+from lm_accounts import lm_bag, lm_research
 
 urlpatterns = [
     path("", views.home, name="home-accounts"),
@@ -24,4 +24,7 @@ urlpatterns = [
     path("create-bag-resources/", lm_bag.createBagResources, name="create-bag-resources"),
     path("update-bag-resources/:<str:pk>/", lm_bag.updateBagResources, name="update-bag-resources"),
     path("delete-bag-resources/:<str:pk>/", lm_bag.deleteBagResources, name="delete-bag-resources"),
+    path("create-research-economy/", lm_research.createResearchEconomy, name="create-research-economy"),
+    path("update-research-economy/:<str:pk>/", lm_research.updateResearchEconomy, name="update-research-economy"),
+    path("delete-research-economy/:<str:pk>/", lm_research.deleteResearchEconomy, name="delete-research-economy"),
 ]

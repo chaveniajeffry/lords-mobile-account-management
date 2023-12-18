@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from base.models import LMAccount
-from lm_accounts.models import LMUserAccount,LMUserBag,LMUserBagChest,LMUserBagCombat,LMUserBagResources,LMUserBagSpeedUp,LMUserBagUnique
-from lm_accounts.forms import LMUserAccountForm,LMUserBagChestForm, LMUserBagUniqueForm, LMUserBagSpeedUpForm, LMUserBagCombatForm, LMUserBagResourcesForm
+from lm_accounts.models import *
+from lm_accounts.forms import *
 
 def createBagChest(request):
     if request.method == "POST":

@@ -38,17 +38,20 @@ def createAccount(request):
 def readAccount(request,pk):
     lm_account = get_object_or_404(LMUserAccount, id=pk)
     lm_user_bag = LMUserBag.objects.get(account_id=lm_account)
+    lm_user_research = LMUserResearch.objects.get(account_id=lm_account)
     lm_user_bag_chest = LMUserBagChest.objects.filter(bag_id=lm_user_bag)
     lm_user_bag_unique = LMUserBagUnique.objects.filter(bag_id=lm_user_bag)
     lm_user_bag_speed_up = LMUserBagSpeedUp.objects.filter(bag_id=lm_user_bag)
     lm_user_bag_combat = LMUserBagCombat.objects.filter(bag_id=lm_user_bag)
     lm_user_bag_resources = LMUserBagResources.objects.filter(bag_id=lm_user_bag)
+    lm_user_research_economy = LMUserResearchEconomy.objects.filter(research=lm_user_research)
     
     lm_user_bag_chest_form = LMUserBagChestForm()
     lm_user_bag_unique_form = LMUserBagUniqueForm()
     lm_user_bag_speed_up_form = LMUserBagSpeedUpForm()
     lm_user_bag_combat_form = LMUserBagCombatForm()
     lm_user_bag_resources_form = LMUserBagResourcesForm()
+    lm_user_research_economy_form = LMUserResearchEconomyForm()
     context = {
         "lm_account":lm_account,
         
@@ -63,6 +66,9 @@ def readAccount(request,pk):
         "lm_user_bag_speed_up_form":lm_user_bag_speed_up_form,
         "lm_user_bag_combat_form":lm_user_bag_combat_form,
         "lm_user_bag_resources_form":lm_user_bag_resources_form,
+
+        "lm_user_research_economy":lm_user_research_economy,
+        "lm_user_research_economy_form":lm_user_research_economy_form,
     }
     return render(request,'lm_accounts/lm_account_details.html',context)
     

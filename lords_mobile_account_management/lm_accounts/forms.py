@@ -33,9 +33,7 @@ class LMUserBagSpeedUpForm(ModelForm):
         fields = [
             'name', 'count', 'bag_id'
         ]
-
-
-        
+ 
 class LMUserBagCombatForm(ModelForm):
     
     class Meta:
@@ -43,7 +41,6 @@ class LMUserBagCombatForm(ModelForm):
         fields = [
             'name', 'count', 'bag_id'
         ]
-
         
 class LMUserBagResourcesForm(ModelForm):
     
@@ -51,4 +48,12 @@ class LMUserBagResourcesForm(ModelForm):
         model = LMUserBagResources
         fields = [
             'name', 'count', 'bag_id'
+        ]
+
+class LMUserResearchEconomyForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchEconomy
+        fields = [
+            'name', 'level', 'research'
         ]
