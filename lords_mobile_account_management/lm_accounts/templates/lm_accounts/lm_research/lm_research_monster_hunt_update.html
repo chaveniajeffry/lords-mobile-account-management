@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ lm_user_research_monster_hunt_form.id }}
+    {{ lm_user_research_monster_hunt_form.name.label }}
+    {{ lm_user_research_monster_hunt_form.name }}
+    {{ lm_user_research_monster_hunt_form.level.label }}
+    {{ lm_user_research_monster_hunt_form.level }}
+    <input type="submit" value="Save">
+</form>
+{% endblock %}

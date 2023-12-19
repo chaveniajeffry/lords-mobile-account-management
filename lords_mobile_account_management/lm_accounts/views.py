@@ -45,6 +45,9 @@ def readAccount(request,pk):
     lm_user_bag_combat = LMUserBagCombat.objects.filter(bag_id=lm_user_bag)
     lm_user_bag_resources = LMUserBagResources.objects.filter(bag_id=lm_user_bag)
     lm_user_research_economy = LMUserResearchEconomy.objects.filter(research=lm_user_research)
+    lm_user_research_defense = LMUserResearchDefense.objects.filter(research=lm_user_research)
+    lm_user_research_military = LMUserResearchMilitary.objects.filter(research=lm_user_research)
+    lm_user_research_monster_hunt = LMUserResearchMonsterHunt.objects.filter(research=lm_user_research)
     
     lm_user_bag_chest_form = LMUserBagChestForm()
     lm_user_bag_unique_form = LMUserBagUniqueForm()
@@ -52,6 +55,9 @@ def readAccount(request,pk):
     lm_user_bag_combat_form = LMUserBagCombatForm()
     lm_user_bag_resources_form = LMUserBagResourcesForm()
     lm_user_research_economy_form = LMUserResearchEconomyForm()
+    lm_user_research_defense_form = LMUserResearchDefenseForm()
+    lm_user_research_military_form = LMUserResearchMilitaryForm()
+    lm_user_research_monster_hunt_form = LMUserResearchMonsterHuntForm()
     context = {
         "lm_account":lm_account,
         
@@ -60,7 +66,6 @@ def readAccount(request,pk):
         "lm_user_bag_unique":lm_user_bag_unique,
         "lm_user_bag_combat":lm_user_bag_combat,
         "lm_user_bag_resources":lm_user_bag_resources,
-
         "lm_user_bag_unique_form":lm_user_bag_unique_form,
         "lm_user_bag_speed_up":lm_user_bag_speed_up,
         "lm_user_bag_speed_up_form":lm_user_bag_speed_up_form,
@@ -69,6 +74,12 @@ def readAccount(request,pk):
 
         "lm_user_research_economy":lm_user_research_economy,
         "lm_user_research_economy_form":lm_user_research_economy_form,
+        "lm_user_research_defense":lm_user_research_defense,
+        "lm_user_research_defense_form":lm_user_research_defense_form,
+        "lm_user_research_military":lm_user_research_military,
+        "lm_user_research_military_form":lm_user_research_military_form,
+        "lm_user_research_monster_hunt":lm_user_research_monster_hunt,
+        "lm_user_research_monster_hunt_form":lm_user_research_monster_hunt_form,
     }
     return render(request,'lm_accounts/lm_account_details.html',context)
     

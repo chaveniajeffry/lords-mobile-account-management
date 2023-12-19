@@ -57,3 +57,27 @@ class LMUserResearchEconomyForm(ModelForm):
         fields = [
             'name', 'level', 'research'
         ]
+
+class LMUserResearchDefenseForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchDefense
+        fields = [
+            'name', 'level', 'research'
+        ]
+        
+class LMUserResearchMilitaryForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchMilitary
+        fields = [
+            'name', 'level', 'research'
+        ]
+
+class LMUserResearchMonsterHuntForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchMonsterHunt
+        fields = [
+            'name', 'level', 'research'
+        ] 

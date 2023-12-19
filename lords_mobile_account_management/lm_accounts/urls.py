@@ -27,4 +27,13 @@ urlpatterns = [
     path("create-research-economy/", lm_research.createResearchEconomy, name="create-research-economy"),
     path("update-research-economy/:<str:pk>/", lm_research.updateResearchEconomy, name="update-research-economy"),
     path("delete-research-economy/:<str:pk>/", lm_research.deleteResearchEconomy, name="delete-research-economy"),
+    path("create-research-defense/", lm_research.createResearchDefense, name="create-research-defense"),
+    path("update-research-defense/:<str:pk>/", lm_research.updateResearchDefense, name="update-research-defense"),
+    path("delete-research-defense/:<str:pk>/", lm_research.deleteResearchDefense, name="delete-research-defense"),
+    path("create-research-military/", lm_research.createResearchMilitary, name="create-research-military"),
+    path("update-research-military/:<str:pk>/", lm_research.updateResearchMilitary, name="update-research-military"),
+    path("delete-research-military/:<str:pk>/", lm_research.deleteResearchMilitary, name="delete-research-military"),
+    path("create-research-monster-hunt/", lm_research.createResearchMonsterHunt, name="create-research-monster-hunt"),
+    path("update-research-monster-hunt/:<str:pk>/", lm_research.updateResearchMonsterHunt, name="update-research-monster-hunt"),
+    path("delete-research-monster-hunt/:<str:pk>/", lm_research.deleteResearchMonsterHunt, name="delete-research-monster-hunt"),
 ]
