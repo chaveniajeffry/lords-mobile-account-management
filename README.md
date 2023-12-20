@@ -1,5 +1,7 @@
 # lords-mobile-account-management
-
+# Installation
+//TODO
+# Notes
 This are the apps that I'll be using:\
 <ol type="1">
 <li>lm core - this is where all the core model/info will be</li>
