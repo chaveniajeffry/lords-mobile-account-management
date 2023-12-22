@@ -7,3 +7,4 @@ lords_mobile_account_management/lm_calculator/migrations/
 lords_mobile_account_management/lm_core/migrations/
 lords_mobile_account_management/lm_infobank/migrations/
 lords_mobile_account_management/lords_mobile_account_management/settings.py
+*.sqlite3
