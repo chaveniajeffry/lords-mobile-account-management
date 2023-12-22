@@ -36,4 +36,7 @@ urlpatterns = [
     path("create-research-monster-hunt/", lm_research.createResearchMonsterHunt, name="create-research-monster-hunt"),
     path("update-research-monster-hunt/:<str:pk>/", lm_research.updateResearchMonsterHunt, name="update-research-monster-hunt"),
     path("delete-research-monster-hunt/:<str:pk>/", lm_research.deleteResearchMonsterHunt, name="delete-research-monster-hunt"),
+    path("create-research-upgrade-defenses/", lm_research.createResearchUpgradeDefenses, name="create-research-upgrade-defenses"),
+    path("update-research-upgrade-defenses/:<str:pk>/", lm_research.updateResearchUpgradeDefenses, name="update-research-upgrade-defenses"),
+    path("delete-research-upgrade-defenses/:<str:pk>/", lm_research.deleteResearchUpgradeDefenses, name="delete-research-upgrade-defenses"),
 ]

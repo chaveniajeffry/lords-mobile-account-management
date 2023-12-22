@@ -80,4 +80,12 @@ class LMUserResearchMonsterHuntForm(ModelForm):
         model = LMUserResearchMonsterHunt
         fields = [
             'name', 'level', 'research'
+        ]
+        
+class LMUserResearchUpgradeDefensesForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchUpgradeDefenses
+        fields = [
+            'name', 'level', 'research'
         ] 

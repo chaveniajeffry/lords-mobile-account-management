@@ -48,6 +48,7 @@ def readAccount(request,pk):
     lm_user_research_defense = LMUserResearchDefense.objects.filter(research=lm_user_research)
     lm_user_research_military = LMUserResearchMilitary.objects.filter(research=lm_user_research)
     lm_user_research_monster_hunt = LMUserResearchMonsterHunt.objects.filter(research=lm_user_research)
+    lm_user_research_upgrade_defenses = LMUserResearchUpgradeDefenses.objects.filter(research=lm_user_research)
     
     lm_user_bag_chest_form = LMUserBagChestForm()
     lm_user_bag_unique_form = LMUserBagUniqueForm()
@@ -58,6 +59,7 @@ def readAccount(request,pk):
     lm_user_research_defense_form = LMUserResearchDefenseForm()
     lm_user_research_military_form = LMUserResearchMilitaryForm()
     lm_user_research_monster_hunt_form = LMUserResearchMonsterHuntForm()
+    lm_user_research_upgrade_defenses_form = LMUserResearchUpgradeDefensesForm()
     context = {
         "lm_account":lm_account,
         
@@ -80,6 +82,8 @@ def readAccount(request,pk):
         "lm_user_research_military_form":lm_user_research_military_form,
         "lm_user_research_monster_hunt":lm_user_research_monster_hunt,
         "lm_user_research_monster_hunt_form":lm_user_research_monster_hunt_form,
+        "lm_user_research_upgrade_defenses":lm_user_research_upgrade_defenses,
+        "lm_user_research_upgrade_defenses_form":lm_user_research_upgrade_defenses_form,
     }
     return render(request,'lm_accounts/lm_account_details.html',context)
     
