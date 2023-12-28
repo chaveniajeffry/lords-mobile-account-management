@@ -8,14 +8,15 @@
         <tr>
             <td>{{bag_combat.name}}</td>
             <td>{{bag_combat.count}}</td>
-            <td><a href="{% url "update-bag-combat" bag_combat.id %}">edit</a></td>
-            <td><a href="{% url "delete-bag-combat" bag_combat.id %}">delete</a></td>
+            <td><a href="{% url "update-bag" 'bag_combat' bag_combat.id %}">edit</a></td>
+            <td><a href="{% url "delete-bag" 'bag_combat' bag_combat.id %}">delete</a></td>
         </tr>
     {% endfor %}
     <tr>
-        <form action="{% url 'create-bag-combat' %}" method="post">
+        <form action="{% url 'create-bag' %}" method="post">
             {% csrf_token %}
             <input type="hidden" name="pk" value="{{lm_account.id}}">
+            <input type="hidden" name="bag_type" value="bag_combat">
             <td>{{ lm_user_bag_combat_form.name }}</td>
             <td>{{ lm_user_bag_combat_form.count }}</td>
             <td colspan=2><input type="submit" value="Save"></td>

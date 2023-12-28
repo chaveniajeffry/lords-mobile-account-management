@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ lm_user_bag_form.id }}
+    {{ lm_user_bag_form.name.label }}
+    {{ lm_user_bag_form.name }}
+    {{ lm_user_bag_form.count.label }}
+    {{ lm_user_bag_form.count }}
+    <input type="submit" value="Save">
+</form>
+{% endblock %}

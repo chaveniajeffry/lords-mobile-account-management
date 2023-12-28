@@ -88,4 +88,14 @@ class LMUserResearchUpgradeDefensesForm(ModelForm):
         model = LMUserResearchUpgradeDefenses
         fields = [
             'name', 'level', 'research'
-        ] 
+        ]
+
+
+
+class LMUserResearchUpgradeMilitaryForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchUpgradeMilitary
+        fields = [
+            'name', 'level', 'research'
+        ]
