@@ -90,12 +90,74 @@ class LMUserResearchUpgradeDefensesForm(ModelForm):
             'name', 'level', 'research'
         ]
 
-
-
 class LMUserResearchUpgradeMilitaryForm(ModelForm):
     
     class Meta:
         model = LMUserResearchUpgradeMilitary
+        fields = [
+            'name', 'level', 'research'
+        ]
+
+class LMUserResearchArmyLeadershipForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchArmyLeadership
+        fields = [
+            'name', 'level', 'research'
+        ]
+
+class LMUserResearchMilitaryCommandForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchMilitaryCommand
+        fields = [
+            'name', 'level', 'research'
+        ]
+
+class LMUserResearchFamiliarForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchFamiliar
+        fields = [
+            'name', 'level', 'research'
+        ]
+
+class LMUserResearchFamiliarBattlesForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchFamiliarBattles
+        fields = [
+            'name', 'level', 'research'
+        ]
+
+class LMUserResearchSigilForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchSigil
+        fields = [
+            'name', 'level', 'research'
+        ]
+
+class LMUserResearchWonderBattlesForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchWonderBattles
+        fields = [
+            'name', 'level', 'research'
+        ]
+
+class LMUserResearchGearForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchGear
+        fields = [
+            'name', 'level', 'research'
+        ]
+
+class LMUserResearchAdvancedWonderBattlesForm(ModelForm):
+    
+    class Meta:
+        model = LMUserResearchAdvancedWonderBattles
         fields = [
             'name', 'level', 'research'
         ]
