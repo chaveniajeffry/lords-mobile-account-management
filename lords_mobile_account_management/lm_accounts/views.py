@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from lm_accounts.models import *
 from lm_accounts.forms import *
+from lm_accounts.utils import checkModel,checkForm
 
 @login_required
 def home(request):
@@ -49,41 +50,40 @@ def readAccount(request,pk):
     lm_user_research_military = LMUserResearchMilitary.objects.filter(research=lm_user_research)
     lm_user_research_monster_hunt = LMUserResearchMonsterHunt.objects.filter(research=lm_user_research)
     lm_user_research_upgrade_defenses = LMUserResearchUpgradeDefenses.objects.filter(research=lm_user_research)
+    lm_user_research_upgrade_military = LMUserResearchUpgradeMilitary.objects.filter(research=lm_user_research)
+    lm_user_research_army_leadership = LMUserResearchArmyLeadership.objects.filter(research=lm_user_research)
+    lm_user_research_military_command = LMUserResearchMilitaryCommand.objects.filter(research=lm_user_research)
+    lm_user_research_familiar = LMUserResearchFamiliar.objects.filter(research=lm_user_research)
+    lm_user_research_familiar_battles = LMUserResearchFamiliarBattles.objects.filter(research=lm_user_research)
+    lm_user_research_sigil = LMUserResearchSigil.objects.filter(research=lm_user_research)
+    lm_user_research_wonder_battles = LMUserResearchWonderBattles.objects.filter(research=lm_user_research)
+    lm_user_research_gear = LMUserResearchGear.objects.filter(research=lm_user_research)
+    lm_user_research_advanced_wonder_battles = LMUserResearchAdvancedWonderBattles.objects.filter(research=lm_user_research)
     
-    lm_user_bag_chest_form = LMUserBagChestForm()
-    lm_user_bag_unique_form = LMUserBagUniqueForm()
-    lm_user_bag_speed_up_form = LMUserBagSpeedUpForm()
-    lm_user_bag_combat_form = LMUserBagCombatForm()
-    lm_user_bag_resources_form = LMUserBagResourcesForm()
-    lm_user_research_economy_form = LMUserResearchEconomyForm()
-    lm_user_research_defense_form = LMUserResearchDefenseForm()
-    lm_user_research_military_form = LMUserResearchMilitaryForm()
-    lm_user_research_monster_hunt_form = LMUserResearchMonsterHuntForm()
-    lm_user_research_upgrade_defenses_form = LMUserResearchUpgradeDefensesForm()
+    
     context = {
         "lm_account":lm_account,
         
         "lm_user_bag_chest":lm_user_bag_chest,
-        "lm_user_bag_chest_form":lm_user_bag_chest_form,
         "lm_user_bag_unique":lm_user_bag_unique,
         "lm_user_bag_combat":lm_user_bag_combat,
         "lm_user_bag_resources":lm_user_bag_resources,
-        "lm_user_bag_unique_form":lm_user_bag_unique_form,
         "lm_user_bag_speed_up":lm_user_bag_speed_up,
-        "lm_user_bag_speed_up_form":lm_user_bag_speed_up_form,
-        "lm_user_bag_combat_form":lm_user_bag_combat_form,
-        "lm_user_bag_resources_form":lm_user_bag_resources_form,
 
         "lm_user_research_economy":lm_user_research_economy,
-        "lm_user_research_economy_form":lm_user_research_economy_form,
         "lm_user_research_defense":lm_user_research_defense,
-        "lm_user_research_defense_form":lm_user_research_defense_form,
         "lm_user_research_military":lm_user_research_military,
-        "lm_user_research_military_form":lm_user_research_military_form,
         "lm_user_research_monster_hunt":lm_user_research_monster_hunt,
-        "lm_user_research_monster_hunt_form":lm_user_research_monster_hunt_form,
         "lm_user_research_upgrade_defenses":lm_user_research_upgrade_defenses,
-        "lm_user_research_upgrade_defenses_form":lm_user_research_upgrade_defenses_form,
+        "lm_user_research_upgrade_military":lm_user_research_upgrade_military,
+        "lm_user_research_army_leadership":lm_user_research_army_leadership,
+        "lm_user_research_military_command":lm_user_research_military_command,
+        "lm_user_research_familiar":lm_user_research_familiar,
+        "lm_user_research_familiar_battles":lm_user_research_familiar_battles,
+        "lm_user_research_sigil":lm_user_research_sigil,
+        "lm_user_research_wonder_battles":lm_user_research_wonder_battles,
+        "lm_user_research_gear":lm_user_research_gear,
+        "lm_user_research_advanced_wonder_battles":lm_user_research_advanced_wonder_battles,
     }
     return render(request,'lm_accounts/lm_account_details.html',context)
     

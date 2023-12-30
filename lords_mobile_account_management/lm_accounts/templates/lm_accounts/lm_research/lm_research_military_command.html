@@ -4,19 +4,19 @@
         <td>Level</td>
         <td colspan=2>Action</td>
     </tr>
-    {% for research_upgrade_defenses in lm_user_research_upgrade_defenses %}
+    {% for research_military_command in lm_user_research_military_command %}
         <tr>
-            <td>{{research_upgrade_defenses.name}}</td>
-            <td>{{research_upgrade_defenses.level}}</td>
-            <td><a href="{% url "update-research" 'research-upgrade-defenses' research_upgrade_defenses.id %}">edit</a></td>
-            <td><a href="{% url "delete-research" 'research-upgrade-defenses' research_upgrade_defenses.id %}">delete</a></td>
+            <td>{{research_military_command.name}}</td>
+            <td>{{research_military_command.level}}</td>
+            <td><a href="{% url "update-research" 'research-military-command' research_military_command.id %}">edit</a></td>
+            <td><a href="{% url "delete-research" 'research-military-command' research_military_command.id %}">delete</a></td>
         </tr>
     {% endfor %}
     <tr>
         <form action="{% url 'create-research' %}" method="post">
             {% csrf_token %}
             <input type="hidden" name="pk" value="{{lm_account.id}}">
-            <input type="hidden" name="research_type" value="research-upgrade-defenses">
+            <input type="hidden" name="research_type" value="research-military-command">
             <td><input type="text" name="name" placeholder="Ex: Nya"></td>
             <td><input type="number" name="level" placeholder="Ex: 2"></td>
             <td colspan=2><input type="submit" value="Save"></td>

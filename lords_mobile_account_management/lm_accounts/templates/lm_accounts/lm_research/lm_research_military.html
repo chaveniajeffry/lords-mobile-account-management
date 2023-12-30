@@ -8,16 +8,17 @@
         <tr>
             <td>{{research_military.name}}</td>
             <td>{{research_military.level}}</td>
-            <td><a href="{% url "update-research-military" research_military.id %}">edit</a></td>
-            <td><a href="{% url "delete-research-military" research_military.id %}">delete</a></td>
+            <td><a href="{% url "update-research" 'research-military' research_military.id %}">edit</a></td>
+            <td><a href="{% url "delete-research" 'research-military' research_military.id %}">delete</a></td>
         </tr>
     {% endfor %}
     <tr>
-        <form action="{% url 'create-research-military' %}" method="post">
+        <form action="{% url 'create-research' %}" method="post">
             {% csrf_token %}
             <input type="hidden" name="pk" value="{{lm_account.id}}">
-            <td>{{ lm_user_research_military_form.name }}</td>
-            <td>{{ lm_user_research_military_form.level }}</td>
+            <input type="hidden" name="research_type" value="research-military">
+            <td><input type="text" name="name" placeholder="Ex: Nya"></td>
+            <td><input type="number" name="level" placeholder="Ex: 2"></td>
             <td colspan=2><input type="submit" value="Save"></td>
         </form>
     </tr>
