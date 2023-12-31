@@ -1,13 +1,11 @@
 # lords-mobile-account-management
 # Installation
-<ol type="1">
-    <li>Install python 3.x</li>
-    <li>Install Django 3.x</li>    
-</ol>
-````python
+1. Install python 3.x
+1. Install Django 3.x    
+```python
     pip install Django==3.1
-````
-\# Notes
+```
+# Notes
 This are the apps that I'll be using:
 <ol type="1">
 <li>lm core - this is where all the core model/info will be</li>
