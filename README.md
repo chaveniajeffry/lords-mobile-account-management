@@ -7,8 +7,8 @@
 ```python
     pip install Django==3.1
 ```
-# Notes
-This are the apps that I'll be using:\
+\# Notes
+This are the apps that I'll be using:
 <ol type="1">
 <li>lm core - this is where all the core model/info will be</li>
   <ol type="1">
