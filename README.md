@@ -4,7 +4,7 @@
     <li>Install python 3.x</li>
     <li>Install Django 3.x</li>    
 </ol>
-```
+```python
     pip install Django==3.1
 ```
 # Notes
