@@ -3,6 +3,9 @@
 <ol type="1">
     <li>Install python 3.x</li>
     <li>Install Django 3.x</li>
+    ```python
+    pip install Django==3.1
+    ```
   </ol>
 # Notes
 This are the apps that I'll be using:\
