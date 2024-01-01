@@ -1,7 +1,7 @@
 # lords-mobile-account-management
 # Installation
-1. Install python 3.x
-1. Install Django 3.x    
+1. Install [python](https://www.python.org/downloads/release/python-3114/)
+1. Install Django    
 ```python
     pip install Django==3.1
 ```
