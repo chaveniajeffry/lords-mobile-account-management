@@ -5,6 +5,16 @@
 ```python
     pip install Django==3.1
 ```
+# Run
+1. migrate models
+```python
+    python manage.py makemigrations
+    python manage.py migrate
+```
+2. Run the app
+```shell
+    ./run.sh
+```  
 # Notes
 This are the apps that I'll be using:
 <ol type="1">
